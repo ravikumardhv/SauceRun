@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]">
+  <parameter name="tcNumber" value="https://rally1.rallydev.com/slm/webservice/v2.0/testcase/49444359517"/>
+  <parameter name="projectRefNumber" value="/project/49443733733"/>
+  <parameter name="workspaceRefNumber" value="/workspace/49443733649"/>
+  <test name="exampletest1">
+    <parameter name="tcNumber" value="https://rally1.rallydev.com/slm/webservice/v2.0/testcase/49444359517"/>
+    <classes>
+      <class name="com.prokarma.cicd.automation.SampleSauceIntegrationTest">
+        <methods>
+          <include name="checkCanUserAddATask"/>
+        </methods>
+      </class> <!-- com.prokarma.cicd.automation.SampleSauceIntegrationTest -->
+    </classes>
+  </test> <!-- exampletest1 -->
+</suite> <!-- Failed suite [Suite1] -->

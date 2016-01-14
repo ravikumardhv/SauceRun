@@ -10,7 +10,9 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -109,6 +111,42 @@ public class SampleSauceIntegrationTest implements SauceOnDemandSessionIdProvide
         assertEquals(driver.getTitle(), "CloudSole Angular");
         driver.quit();
     }
+    
+    
+    /**
+     * Runs a simple test verifying the title of the add a task in todo app.
+     *
+     * @param browser Represents the browser to be used as part of the test run.
+     * @param version Represents the version of the browser to be used as part of the test run.
+     * @param os Represents the operating system to be used as part of the test run.
+     * @throws Exception if an error occurs during the running of the test
+     */
+    @Test(dataProvider = "hardCodedBrowsers")
+    public void checkCanUserAddATask(String browser, String version, String os,ITestContext context) throws Exception {
+        WebDriver driver = createDriver(browser, version, os);
+        System.out.println("SauceOnDemandSessionID="+getSessionId() +"job-name="+context.getName());
+        driver.get("http://192.168.13.19:8081/CloudSoleAngular");
+        assertEquals(driver.getTitle(), "CloudSole Angular");
+        WebElement todoInputText = driver.findElement(By.xpath(".//*[@id='wrapper']/div/div/div[2]/div[2]/div[2]/form/div/input"));
+        WebElement addTodoButton= driver.findElement(By.xpath(".//*[@id='wrapper']/div/div/div[2]/div[2]/div[2]/button[1]"));
+        
+        assertEquals(addTodoButton.isEnabled(), false);
+        System.out.println("Add to button is enable "+addTodoButton.isEnabled());
+        
+        String enteredText = "Test me";
+        todoInputText.clear();
+		todoInputText.sendKeys(enteredText);
+		System.out.println("Add to button is enable "+addTodoButton.isEnabled());
+		assertEquals(addTodoButton.isEnabled(), true);
+        addTodoButton.click();
+        
+        WebElement enteredElementData = driver.findElement(By.cssSelector(".table>tbody>tr:last-child>td:last-child"));
+        String availabeText = enteredElementData.getText();
+        assertEquals(availabeText, enteredText);
+        driver.quit();
+    }
+    
+    
 
     /**
      * @return the {@link WebDriver} for the current thread

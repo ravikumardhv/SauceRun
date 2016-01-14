@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite1" duration-ms="17039" started-at="2016-01-13T12:28:41Z" finished-at="2016-01-13T12:28:58Z">
+    <groups>
+    </groups>
+    <test name="exampletest1" duration-ms="17039" started-at="2016-01-13T12:28:41Z" finished-at="2016-01-13T12:28:58Z">
+      <class name="com.prokarma.cicd.automation.SampleSauceIntegrationTest">
+        <test-method status="PASS" signature="webDriver(java.lang.String, java.lang.String, java.lang.String, org.testng.ITestContext)" name="webDriver" duration-ms="7268" started-at="2016-01-13T12:28:41Z" finished-at="2016-01-13T12:28:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[internet explorer]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[11]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Windows 8.1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[org.testng.TestRunner@174d20a]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="webDriver(java.lang.String, java.lang.String, java.lang.String, org.testng.ITestContext)" name="webDriver" duration-ms="12233" started-at="2016-01-13T12:28:41Z" finished-at="2016-01-13T12:28:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[safari]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[OSX 10.8]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[org.testng.TestRunner@174d20a]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>

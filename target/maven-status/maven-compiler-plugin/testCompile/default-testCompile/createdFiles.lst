@@ -1,0 +1,2 @@
+com\prokarma\cicd\testng\listener\TestListener.class
+com\prokarma\cicd\automation\SampleSauceIntegrationTest.class
