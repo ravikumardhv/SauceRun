@@ -107,7 +107,7 @@ public class SampleSauceIntegrationTest implements SauceOnDemandSessionIdProvide
     public void checkPageTitle(String browser, String version, String os,ITestContext context) throws Exception {
         WebDriver driver = createDriver(browser, version, os);
         System.out.println("SauceOnDemandSessionID="+getSessionId() +"job-name="+context.getName());
-        driver.get("http://192.168.12.186:8081/CloudSoleAngular");
+        driver.get("http://192.168.12.186:8081/CloudSoleAngular/#/todo");
         assertEquals(driver.getTitle(), "CloudSole Angular");
         driver.quit();
     }
@@ -125,7 +125,7 @@ public class SampleSauceIntegrationTest implements SauceOnDemandSessionIdProvide
     public void checkCanUserAddATask(String browser, String version, String os,ITestContext context) throws Exception {
         WebDriver driver = createDriver(browser, version, os);
         System.out.println("SauceOnDemandSessionID="+getSessionId() +"job-name="+context.getName());
-        driver.get("http://192.168.12.186:8081/CloudSoleAngular");
+        driver.get("http://192.168.12.186:8081/CloudSoleAngular/#/todo");
         assertEquals(driver.getTitle(), "CloudSole Angular");
         WebElement todoInputText = driver.findElement(By.xpath(".//*[@id='wrapper']/div/div/div[2]/div[2]/div[2]/form/div/input"));
         WebElement addTodoButton= driver.findElement(By.xpath(".//*[@id='wrapper']/div/div/div[2]/div[2]/div[2]/button[1]"));
